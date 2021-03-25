@@ -1,14 +1,18 @@
 <div class="form-container">
-  <form [formGroup]="form">
-    <ion-item>
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <h1 class="title">Prueba técnica</h1>
+    <ion-item class="credentials-container">
       <ion-icon name="person-outline"></ion-icon>
       <ion-input
         formControlName="mail"
         type="mail"
         placeholder="Email"
+        (ionInput)="clearErrors()"
       ></ion-input>
     </ion-item>
-    <ion-item>
+    <span class="error-message" *ngIf="errorMail"> Formato de mail erroneo
+    </span>
+    <ion-item class="credentials-container"> 
       <ion-icon name="mail-outline"></ion-icon>
       <ion-input
         formControlName="password"
@@ -16,6 +20,15 @@
         placeholder="Contraseña"
       ></ion-input>
     </ion-item>
+    <span class="error-message" *ngIf="errorPassword"> Contraseña incorrecta, debe tener 5 caracteres
+    </span>
+    <div class="remind">
+      <span>Recordar</span>
+      <ion-toggle formControlName="remind" checked="false"></ion-toggle>
+    </div>
+    <div class="button-container">
+      <button class="access-button" type="submit">Acceder</button>
+    </div>
   </form>
 </div>
 

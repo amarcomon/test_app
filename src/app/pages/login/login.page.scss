@@ -2,8 +2,13 @@
   ion-content {
     --background: url(../../../assets/images/background.jpg) no-repeat
       center/cover;
-      --padding-top: 50px;
-      --padding-start: 80px;
-      --padding-end: 80px
+      --padding-top: 10%;
+      --padding-start: 5%;
+      --padding-end: 5%;
+
+    @media (min-width: 960px) {
+      --padding-start: 30%;
+      --padding-end: 30%;
+    }
   }
 }
