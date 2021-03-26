@@ -1,7 +1,7 @@
 <div class="form-container">
   <form [formGroup]="form" (ngSubmit)="submit()">
     <h1 class="title">Prueba técnica</h1>
-    <ion-item class="credentials-container">
+    <ion-item lines="none" class="credentials-container">
       <ion-icon name="person-outline"></ion-icon>
       <ion-input
         formControlName="mail"
@@ -13,7 +13,7 @@
     <span class="error-message" *ngIf="errorMail">
       Formato de mail erroneo
     </span>
-    <ion-item class="credentials-container">
+    <ion-item lines="none" class="credentials-container">
       <ion-icon name="mail-outline"></ion-icon>
       <ion-input
         formControlName="password"
