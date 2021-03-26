@@ -1,11 +1,35 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementArrayFinder, ElementFinder } from 'protractor';
 
 export class AppPage {
-  navigateTo() {
-    return browser.get('/');
+  navigateToLogin() {
+    return browser.get('/login');
   }
 
-  getParagraphText() {
-    return element(by.deepCss('app-root ion-content')).getText();
+  getAvatar(): ElementFinder {
+    return element(by.css('ion-avatar'));
+  }
+
+  getFormTitle(): ElementFinder {
+    return element(by.css('.title'));
+  }
+
+  getMailInput(): ElementFinder {
+    return element(by.css('input[type="mail"]'));
+  }
+
+  getPasswordInput(): ElementFinder {
+    return element(by.css('input[type="password"]'));
+  }
+
+  getReminder(): ElementFinder {
+    return element(by.css('.remind'));
+  }
+
+  geButtonSubmit() {
+    return element(by.css('button'));
+  }
+
+  getErrorMessages(): ElementArrayFinder {
+    return element.all(by.css('.error-message'));
   }
 }
